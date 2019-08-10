@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "449734396767",
+    "firebase_url": "https://cuba-233604.firebaseio.com",
+    "project_id": "cuba-233604",
+    "storage_bucket": "cuba-233604.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449734396767:android:b1dd4ba013e397a5",
+        "android_client_info": {
+          "package_name": "com.mahendri.pasbeli"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449734396767-i4aver7p0vtpjspfut14ddphc7tdesrs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mahendri.pasbeli",
+            "certificate_hash": "9b06cbe973e86e5901111ed34654259f597be105"
+          }
+        },
+        {
+          "client_id": "449734396767-6fdcphmt8pf2ikc0p9k8rh8egofthkoa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mahendri.pasbeli",
+            "certificate_hash": "f09913c3ddc31c104761c945d289cc0ee3bb34dc"
+          }
+        },
+        {
+          "client_id": "449734396767-i43pe09mp55hn6hth8h3knia1m23qijn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mahendri.pasbeli",
+            "certificate_hash": "b623d9fff3158a9d77672042d28d62549eef33bb"
+          }
+        },
+        {
+          "client_id": "449734396767-4dnlhhur8s0v1i3cnn6kerlt7htasv5b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgCndVIPQXBqhq7vk4aUmXxE6Xm2Bo8bk"
+        },
+        {
+          "current_key": "AIzaSyDD8ESNmCFNlFRHoOv9udi34boQEPum438"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "449734396767-4dnlhhur8s0v1i3cnn6kerlt7htasv5b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449734396767:android:1e75905fc6c72749",
+        "android_client_info": {
+          "package_name": "xyz.fadli.pasbeli"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449734396767-lkom350uqvmqa6lk7efimp3ampnbnagu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "xyz.fadli.pasbeli",
+            "certificate_hash": "b623d9fff3158a9d77672042d28d62549eef33bb"
+          }
+        },
+        {
+          "client_id": "449734396767-4dnlhhur8s0v1i3cnn6kerlt7htasv5b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgCndVIPQXBqhq7vk4aUmXxE6Xm2Bo8bk"
+        },
+        {
+          "current_key": "AIzaSyDD8ESNmCFNlFRHoOv9udi34boQEPum438"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "449734396767-4dnlhhur8s0v1i3cnn6kerlt7htasv5b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

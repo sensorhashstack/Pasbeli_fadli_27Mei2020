@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="catatan"
+            type="xyz.fadli.pasbeli.model.BarangHarga"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/komoditi_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@{@string/tmp_harga(catatan.nama_barang, catatan.harga_barang)}"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                tools:text="mendata Bayam seharga Rp 5000" />
+
+            <TextView
+                android:id="@+id/komoditi_tempat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/komoditi_data"
+                android:layout_alignStart="@id/komoditi_data"
+                android:layout_alignLeft="@id/komoditi_data"
+                android:layout_marginTop="@dimen/dp4_margin"
+                android:drawableStart="@drawable/ic_location_on_black_24dp"
+                android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                android:drawablePadding="@dimen/dp4_margin"
+                android:text="@{catatan.nama_pasar}"
+                tools:text="Pasar Genjing" />
+
+            <TextView
+                android:id="@+id/komoditi_waktu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/komoditi_tempat"
+                android:layout_marginLeft="@dimen/dp8_margin"
+                android:layout_toRightOf="@id/komoditi_tempat"
+                android:drawableLeft="@drawable/ic_access_time_black_24dp"
+                android:drawablePadding="@dimen/dp4_margin"
+                android:text="@{catatan.strWaktu}"
+                tools:text="13:40" />
+
+            <View
+                android:id="@+id/komoditi_divider"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_below="@id/komoditi_tempat"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@android:color/darker_gray" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

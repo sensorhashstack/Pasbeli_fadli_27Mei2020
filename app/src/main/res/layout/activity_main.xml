@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewmodel"
+            type="xyz.fadli.pasbeli.ui.main.MainViewModel"/>
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment
+            android:id="@+id/fragment_map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <RelativeLayout
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="208dp"
+            android:background="@android:color/white"
+            android:padding="@dimen/activity_horizontal_margin"
+            app:behavior_hideable="true"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <TextView
+                android:id="@+id/place_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="-38dp"
+                android:layout_marginRight="-38dp"
+                android:layout_marginBottom="@dimen/dp4_margin"
+                android:layout_toStartOf="@+id/place_distance"
+                android:layout_toLeftOf="@+id/place_distance"
+                android:text="@{viewmodel.pasar.nama_pasar}"
+                android:textColor="@android:color/black"
+                android:textSize="22sp"
+                tools:text="Pasar Genjing" />
+
+            <ImageView
+                android:id="@+id/ic_symbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/place_title"
+                app:srcCompat="@drawable/ic_location_on_black_24dp" />
+
+            <TextView
+                android:id="@+id/place_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/ic_symbol"
+                android:layout_marginBottom="@dimen/dp8_margin"
+                android:layout_toRightOf="@id/ic_symbol"
+                android:text="@{viewmodel.pasar.alamat_pasar}"
+                tools:text="Jalan Merdeka Barat No 15" />
+
+            <TextView
+                android:id="@+id/place_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="@{viewmodel.distance}"
+                android:textSize="18sp"
+                tools:text="3.4KM" />
+
+            <View
+                android:id="@+id/place_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/place_address"
+                android:layout_marginBottom="@dimen/dp4_margin"
+                android:background="@android:color/darker_gray" />
+
+            <Button
+                android:id="@+id/lihatHargaPasar"
+                android:layout_width="500dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/place_divider"
+                android:background="@color/ungu"
+                android:onClick="@{() -> viewmodel.lihatHargaPasar()}"
+                android:text="@string/lihat_harga_pasar" />
+
+            <Button
+                android:id="@+id/place_button"
+                android:layout_width="500dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/lihatHargaPasar"
+                android:background="@color/colorAccent"
+                android:layout_marginBottom="@dimen/dp8_margin"
+                android:onClick="@{() -> viewmodel.onAddClick()}"
+                android:text="@string/add_data" />
+
+            <Button
+                android:id="@+id/buttonRed"
+                android:layout_width="500dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/lihatHargaPasar"
+                android:background="@color/red"
+                android:onClick="@{() -> viewmodel.onAddClick()}"
+                android:text="@string/add_data" />
+
+            <Button
+                android:id="@+id/buttonEdit"
+                android:layout_width="500dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/lihatHargaPasar"
+                android:background="@color/primary_900"
+                android:onClick="@{() -> viewmodel.onEditPasar()}"
+                android:text="@string/edit_admin"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

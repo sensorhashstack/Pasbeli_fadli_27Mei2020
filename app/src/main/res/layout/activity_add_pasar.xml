@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+                name="spinAdapter"
+                type="android.widget.ArrayAdapter"/>
+        <variable
+                name="coba"
+                type="xyz.fadli.pasbeli.ui.addpasar.AddPasarViewModel"/>
+    </data>
+
+    <RelativeLayout
+            android:id="@+id/RelativeLayout_AddPasar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:id="@+id/add_new_pasar"
+                android:layout_width="228dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="95dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="88dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="@string/tambahkan_pasar_baru"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textSize="18sp"
+
+                />
+
+        <EditText
+                android:id="@+id/account_name"
+                android:layout_width="288dp"
+                android:layout_height="wrap_content"
+                android:hint="account name"
+                android:text="@={coba.namaPasarBaru}"
+                android:layout_marginTop="39dp"
+                android:layout_below="@+id/add_new_pasar"
+                android:layout_toEndOf="@+id/text_namaPasarBaru"
+                android:layout_marginStart="31dp"/>
+
+        <EditText
+                android:id="@+id/alamat_baru"
+                android:layout_width="288dp"
+                android:layout_height="wrap_content"
+                android:hint="alamat"
+                android:text="@={coba.alamatPasarBaru}"
+                android:layout_toEndOf="@+id/nama_alamat_baru"
+                android:layout_marginStart="63dp"
+                android:layout_marginTop="7dp"
+                android:layout_below="@+id/account_name"/>
+
+
+        <TextView
+                android:id="@+id/text_namaPasarBaru"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/add_new_pasar"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="51dp"
+                android:text="@string/nama_pasar"
+                android:textAlignment="center"/>
+
+        <TextView
+                android:id="@+id/nama_alamat_baru"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_namaPasarBaru"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="37dp"
+                android:text="@string/alamat"/>
+
+        <TextView
+                android:id="@+id/jenis_pasar"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nama_alamat_baru"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="27dp"
+                android:text="@string/jenis_pasar"/>
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner_add_Pasar"
+            android:layout_width="288dp"
+            android:layout_height="wrap_content"
+            bind:pmtOpt="@={coba.spinner_add_pasar}"
+            app:adapter="@{spinAdapter}"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="0dp"
+            android:layout_toEndOf="@+id/jenis_pasar"
+            android:layout_marginStart="19dp"
+            android:layout_below="@+id/alamat_baru"/>
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context="xyz.fadli.pasbeli.ui.addpasar.AddPasarActivity">
+
+            <FrameLayout
+                    android:layout_width="411dp"
+                    android:layout_height="308dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="370dp"
+                    android:layout_marginEnd="3dp">
+
+                <!--<include layout="@layout/content_main"-->
+                         <!--android:layout_height="332dp"-->
+                         <!--android:layout_width="wrap_content"-->
+                         <!--android:layout_gravity="center"/>-->
+                <Button
+                    android:id="@+id/buttonChoose"
+                    android:layout_width="377dp"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@android:drawable/ic_menu_gallery"
+                    android:text="@string/choose_image"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="492dp"
+                    android:id="@+id/imageView"
+                    android:src="@{coba.imageUrl}"
+                    android:contentDescription="@string/mantap" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+        <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:id="@+id/container_pasar_loc"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="88dp"-->
+                <!--android:layout_alignParentStart="true"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_marginStart="0dp"-->
+                <!--android:layout_marginTop="249dp"-->
+                <!--android:layout_marginEnd="0dp" android:layout_alignParentTop="true">-->
+
+            <!--<android.support.design.widget.TextInputEditText-->
+                    <!--android:id="@+id/pasar_loc"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="72dp"-->
+                    <!--android:enabled="false"-->
+                    <!--android:gravity="center"-->
+                    <!--android:hint="@string/location_pasar"-->
+                    <!--android:text="@{@string/tmp_location(apvm.location.latitude, apvm.location.longitude)}"/>-->
+
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <Button
+            android:id="@+id/button_tambah_pasar_baru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="286dp"
+            android:layout_marginEnd="168dp"
+            android:layout_marginBottom="683dp"
+            android:gravity="center_horizontal"
+            android:text="@string/save"
+            android:onClick="save"/>
+    </RelativeLayout>
+</layout>

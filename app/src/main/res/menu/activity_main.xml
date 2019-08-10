@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_history"
+        android:title="@string/title_history"
+        android:visible="true"/>
+
+    <item
+        android:id="@+id/history_terverifikasi"
+        android:title="@string/data_terverifikasi"
+        android:visible="true"/>
+
+    <item
+        android:id="@+id/new_pasar"
+        android:title="@string/add_pasar"/>
+
+    <item
+        android:id="@+id/data_harga_belum_terverifikasi"
+        android:title="@string/data_harga_belum_terverifikai"
+        />
+
+    <item
+        android:id="@+id/sign_out"
+        android:title="@string/sign_out"/>
+
+
+</menu>

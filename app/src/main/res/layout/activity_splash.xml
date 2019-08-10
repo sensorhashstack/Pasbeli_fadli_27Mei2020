@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewmodel"
+            type="xyz.fadli.pasbeli.ui.splash.SplashViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/google_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="@dimen/dp100_margin"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@string/desc_logo"
+                app:srcCompat="@drawable/ic_logo_48dp" />
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="@string/welcome_msg"
+                android:textColor="@android:color/white"
+                android:textSize="36sp" />
+
+            <TextView
+                android:id="@+id/detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fadeScrollbars="true"
+                android:gravity="center"
+                android:maxLines="5"
+                android:padding="10dp"
+                android:scrollbars="vertical"
+                android:text="@string/desc_app"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:focusableInTouchMode="true"
+            >
+
+            <!--<com.google.android.gms.common.SignInButton-->
+            <!--android:id="@+id/sign_in_button"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:visibility="@{viewmodel.isLogin ? View.GONE : View.VISIBLE}"-->
+            <!--app:onClick="@{viewmodel}"/>-->
+
+            <TextView
+                android:id="@+id/nameidSignin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="@string/ID"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/account_name"
+                android:layout_width="299dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="6dp"
+                android:layout_toEndOf="@+id/nameidSignin"
+                android:hint="User"
+                android:text="@={viewmodel.iDName}"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/Password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameidSignin"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="@string/Password"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                />
+
+            <EditText
+                android:id="@+id/EditPassword"
+                android:layout_width="298dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="57dp"
+
+                android:layout_toEndOf="@+id/Password"
+                android:hint="User"
+                android:text="@={viewmodel.password}"
+                android:textSize="18sp"
+                />
+
+            <Button
+                android:id="@+id/buttonSignin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/EditPassword"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="159dp"
+                android:layout_marginTop="9dp"
+                android:gravity="center_horizontal"
+                android:onClick="mASUK"
+                android:text="@string/sign_in"
+
+                />
+
+            <!--<ProgressBar-->
+            <!--android:id="@+id/progress_bar"-->
+            <!--android:layout_width="48dp"-->
+            <!--android:layout_height="48dp"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:visibility="@{viewmodel.isLogin ? View.VISIBLE : View.GONE}"-->
+            <!--tools:visibility="gone"/>-->
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

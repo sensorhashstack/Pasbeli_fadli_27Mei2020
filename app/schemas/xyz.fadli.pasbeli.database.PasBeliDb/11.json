@@ -1,0 +1,170 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 11,
+    "identityHash": "e28584f6aa4560a05445d920f0c15517",
+    "entities": [
+      {
+        "tableName": "HargaKonsumen",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_entry` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `id_barang` INTEGER NOT NULL, `id_tempat` INTEGER NOT NULL, `harga` INTEGER NOT NULL, `created_at` TEXT NOT NULL, `updated_at` TEXT NOT NULL, `version_harga` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "idEntry",
+            "columnName": "id_entry",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id_barang",
+            "columnName": "id_barang",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id_pasar",
+            "columnName": "id_tempat",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "harga_barang",
+            "columnName": "harga",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "created_at",
+            "columnName": "created_at",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updated_at",
+            "columnName": "updated_at",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "version_harga",
+            "columnName": "version_harga",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id_entry"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Pasar",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_pasar` INTEGER NOT NULL, `nama_pasar` TEXT NOT NULL, `alamat_pasar` TEXT NOT NULL, `latitude_pasar` REAL NOT NULL, `longitude_pasar` REAL NOT NULL, `version_pasar` INTEGER NOT NULL, PRIMARY KEY(`id_pasar`))",
+        "fields": [
+          {
+            "fieldPath": "id_pasar",
+            "columnName": "id_pasar",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nama_pasar",
+            "columnName": "nama_pasar",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "alamat_pasar",
+            "columnName": "alamat_pasar",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "latitude_pasar",
+            "columnName": "latitude_pasar",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longitude_pasar",
+            "columnName": "longitude_pasar",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "version_pasar",
+            "columnName": "version_pasar",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id_pasar"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Barang",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_barang` INTEGER NOT NULL, `nama_barang` TEXT NOT NULL, `kualitas_barang` TEXT NOT NULL, `satuan_barang` TEXT NOT NULL, `created_at` TEXT, `updated_at` TEXT NOT NULL, PRIMARY KEY(`id_barang`))",
+        "fields": [
+          {
+            "fieldPath": "id_barang",
+            "columnName": "id_barang",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nama_barang",
+            "columnName": "nama_barang",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kualitas_barang",
+            "columnName": "kualitas_barang",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "satuan_barang",
+            "columnName": "satuan_barang",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "created_at",
+            "columnName": "created_at",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "updated_at",
+            "columnName": "updated_at",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id_barang"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e28584f6aa4560a05445d920f0c15517')"
+    ]
+  }
+}

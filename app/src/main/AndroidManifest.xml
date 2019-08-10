@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="xyz.fadli.pasbeli">
+    <!--
+        tidak membutuhkan deklarasi INTERNET dan ACCESS_NETWORK_STATE
+        https://developers.google.com/maps/documentation/android-api/config
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <application
+        android:name=".global.PasBeli"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" /> <!-- Google Map API Key -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAeQ4y1LJE6XY9QgGH1MTY6pzNykfoqrTo" />
+        <meta-data
+            android:name="com.google.android.gms.location.places.AutocompleteFilter"
+            android:value="AIzaSyAeQ4y1LJE6XY9QgGH1MTY6pzNykfoqrTo" />
+        <meta-data
+            android:name="com.google.android.gms.location.places"
+            android:value="AIzaSyAeQ4y1LJE6XY9QgGH1MTY6pzNykfoqrTo" />
+
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.addharga.AddHargaActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.main.MainActivity" />
+        <activity android:name=".ui.addpasar.AddPasarActivity" />
+        <activity android:name=".ui.editpasar.EditPasarActivity" />
+        <activity android:name=".ui.popup.PopupVerifikasiActivity"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"
+            android:windowIsTranslucent="true"
+            android:windowCloseOnTouchOutside="true"/>
+
+        <activity android:name=".ui.history.TambahDataActivity"/>
+        <activity android:name=".ui.popup.PopupSplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"
+            android:windowIsTranslucent="true"
+            android:windowCloseOnTouchOutside="true"/>
+
+
+
+        <activity android:name=".ui.popup.PopupActivity"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"
+            android:windowIsTranslucent="true"
+            android:windowCloseOnTouchOutside="true"/>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="343c9a8a60c459d8fbc58f314fcac9b9cb66e539" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>
